@@ -1,0 +1,22 @@
+.activities-head-section {
+    background: url(../images/activities-header.png);
+    -webkit-background-size: cover!important;
+    -moz-background-size: cover!important;
+    -o-background-size: cover!important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
+.section-text {
+    padding: 90px 0;
+    color: #fff;
+}
+
+img {
+    width: 60%;
+    border-radius: 3px;
+}
+.activities-main h3, .activities-main h5 {
+    text-align: left;
+}

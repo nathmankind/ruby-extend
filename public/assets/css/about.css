@@ -1,0 +1,53 @@
+.counter {
+    /* border: 1px solid green; */
+    border-radius: 50%;
+    height: 170px;
+    width: 170px;
+    text-align: center;
+    padding: 30px;
+    font-size: 70px;
+    margin: auto;
+    color: aliceblue;
+}
+.first {
+    background: #3c97da;
+}
+.second{
+    background: blueviolet;
+}
+.third {
+    background: lightcoral;
+}
+.count p {
+    font-size: 32px;
+}
+.about-head-section {
+    background: url(../images/about-banner.jpg);
+    -webkit-background-size: cover!important;
+    -moz-background-size: cover!important;
+    -o-background-size: cover!important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
+.about-us h1, .portfolio h1 {
+    margin-bottom: 0;
+}
+.explore a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #FF6700;
+}
+.explore a:hover {
+    background: #FF6700;
+}
+.section-text {
+    padding: 90px 0;
+    color: #fff;
+}
+.about-us img {
+    width: 90%;
+}
