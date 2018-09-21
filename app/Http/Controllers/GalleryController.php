@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Gallery;
 use App\School;
 use Illuminate\Http\Request;
+use Mews\Purifier\Facades\Purifier;
 
 class GalleryController extends Controller
 {
@@ -58,7 +59,7 @@ class GalleryController extends Controller
                 $gallery = new Gallery();
                 $gallery->title = $request->title;
                 $gallery->school_id = $request->school_id;
-                $gallery->description = $request->description;
+                $gallery->description = Purifier::clean($request->description);
                 $gallery->image = $filename;
                 $gallery->save();
             }
@@ -68,6 +69,11 @@ class GalleryController extends Controller
         return redirect()->route('image.index')->withSuccess('Your Image Upload  has been successfully added!');
     }
 
+    public function deleteItem(Request $request)
+    {
+        Gallery::find($request->id)->delete();
+        return response()->json();
+    }
     /**
      * Display the specified resource.
      *

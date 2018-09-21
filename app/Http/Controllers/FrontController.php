@@ -53,14 +53,15 @@ class FrontController extends Controller
     }
 
     public function  blog (){
-        $posts = Post::paginate(3);
+        $posts = Post::paginate(5);
         $categories = Category::all();
         return view('blog',compact('posts','categories'));
     }
 
     public function single($slug){
          $post = Post::where('slug',$slug)->first();
-         return view('blog-single',compact('post'));
+        $categories = Category::all();
+         return view('blog-single',compact('post','categories'));
     }
 
     public function volunt(){

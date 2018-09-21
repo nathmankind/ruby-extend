@@ -31,6 +31,9 @@
 <!-- DataTables -->
 <script src="{{asset('admin/dataTables.min.js')}}"></script>
 <script src="{{asset('admin/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
+<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{{asset('admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
 {{--<script>--}}
 {{--$(function () {--}}
 {{--$("#example1").DataTable();--}}

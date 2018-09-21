@@ -7,6 +7,7 @@ use App\Category;
 use App\Post;
 use Auth;
 use Illuminate\Support\Facades\Storage;
+use Mews\Purifier\Facades\Purifier;
 
 class PostController extends Controller
 {
@@ -55,7 +56,7 @@ class PostController extends Controller
         ));
         $post = new Post();
         $post->title = $request->title;
-        $post->body = $request->body;
+        $post->body = Purifier::clean($request->body);
         $post->slug =  str_slug($post->title);
         $post->category_id = $request->category_id;
         $post->user_id = Auth::user()->id;
@@ -113,7 +114,7 @@ class PostController extends Controller
         ));
         $post = Post::find($id);
         $post->title = $request->title;
-        $post->body = $request->body;
+        $post->body = Purifier::clean($request->body);
         $post->slug =  str_slug($post->title);
         $post->category_id = $request->category_id;
         $post->user_id = Auth::user()->id;

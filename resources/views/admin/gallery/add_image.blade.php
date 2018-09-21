@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Description</label>
-                                    <textarea class="form-control" id="description" name="description"  rows="10" cols="40" required>
+                                    <textarea class="form-control textarea" id="description" name="description"  rows="10" cols="40" required>
                                      </textarea>
                                 </div>
                             </div>
@@ -62,4 +62,15 @@
             </div>
         </section>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        $(function () {
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            // CKEDITOR.replace('description');
+            //bootstrap WYSIHTML5 - text editor
+            $(".textarea").wysihtml5();
+        });
+    </script>
 @endsection

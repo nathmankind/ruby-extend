@@ -31,19 +31,10 @@ Route::get('/submit-post', function () {
 });
 
 Route::get('/blog','FrontController@blog');
-
-Route::get('/volunteer','FrontController@volunt')->name('volunteer');
-
-Route::get('/gallery','FrontController@gallery');
-
-Route::get('blog/{slug}','FrontController@single')->name('blog.single');
-Route::post('/contact/store','FrontController@contact')->name('contact.store');
-Route::post('/volunteer/store','FrontController@volunteer')->name('volunteer.store');
-Route::get('/user/logout/','Auth\LoginController@userLogout')->name('user.logout');
-
 Auth::routes();
-
+Route::get('/user/logout/','Auth\LoginController@userLogout')->name('user.logout');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/volunteer','FrontController@volunt')->name('volunteer');
 Route::resource('category','CategoryController');
 Route::post('category/editItem/', 'CategoryController@editItem');
 Route::post('category/deleteItem/', 'CategoryController@deleteItem');
@@ -57,3 +48,12 @@ Route::resource('volunteers', 'VolunteerController');
 Route::post('volunteers/deleteItem/', 'VolunteerController@deleteItem');
 Route::post('school/editItem/', 'SchoolController@editItem');
 Route::post('school/deleteItem/', 'SchoolController@deleteItem');
+
+Route::get('/gallery','FrontController@gallery');
+Route::post('gallery/deleteItem/', 'GalleryController@deleteItem');
+Route::get('/{slug}','FrontController@single')->name('blog.single');
+Route::post('/contact/store','FrontController@contact')->name('contact.store');
+Route::post('/volunteer/store','FrontController@volunteer')->name('volunteer.store');
+
+
+
